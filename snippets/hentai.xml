@@ -33,6 +33,10 @@
           fetch="https://github.com/LineageOS"
           revision="refs/heads/lineage-21.0" />
 
+  <remote name="github/HOS-oberdfr"
+          fetch="https://github.com/HOS-oberdfr"
+          revision="refs/heads/Vallhound" />
+
   <!-- ものを削除 -->
   <remove-project name="device/google/bluejay" />
   <remove-project name="device/google/bluejay-sepolicy" />
@@ -82,8 +86,8 @@
   <remove-project name="platform/hardware/qcom/sm7250/gps" />
 
   <!-- hentaiOSのスタート -->
-  <project path="bionic" name="platform_bionic" groups="pdk" remote="github/hentaiOS" />
-  <project path="build/make" name="platform_build" groups="pdk" remote="github/hentaiOS" >
+  <project path="bionic" name="platform_bionic" groups="pdk" remote="github/HOS-oberdfr" />
+  <project path="build/make" name="platform_build" groups="pdk" remote="github/HOS-oberdfr" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -92,21 +96,21 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="github/hentaiOS" >
+  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="github/HOS-oberdfr" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="github/hentaiOS" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="github/HOS-oberdfr" />
   <project path="external/json-c" name="platform_external_json-c" groups="pdk" remote="github/hentaiOS" />
-  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="gerrit/hentaiOS" />
-  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="github/hentaiOS" />
+  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="github/HOS-oberdfr" />
+  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="github/HOS-oberdfr" />
   <project path="hardware/qcom/sm7250/display" name="platform_hardware_qcom_sm7250_display" groups="pdk" remote="github/hentaiOS" />
   <project path="hardware/qcom/sm7250/media" name="platform_hardware_qcom_sm7250_media" groups="pdk" remote="github/hentaiOS" />
   <project path="hardware/qcom/sm7250/gps" name="platform_hardware_qcom_sm7250_gps" groups="pdk" remote="github/hentaiOS" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7250/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7250/Android.bp" />
   </project>
-  <project path="system/core" name="platform_system_core" groups="pdk" remote="github/hentaiOS" />
+  <project path="system/core" name="platform_system_core" groups="pdk" remote="github/HOS-oberdfr" />
   <project path="packages/apps/helluvaUpdater" name="platform_packages_apps_helluvaUpdater" groups="pdk-fs" remote="github/hentaiOS" />
   <project path="vendor/codeaurora/telephony" name="platform_vendor_codeaurora_telephony" groups="vendor" remote="github/hentaiOS" />
   <project path="vendor/gms" name="platform_vendor_gms" groups="vendor" remote="gitlab/hentaiOS" clone-depth="1" />
