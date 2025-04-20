@@ -21,6 +21,10 @@
           fetch="https://github.com/hentaiOS"
           revision="refs/heads/Vallhound" />
 
+    <remote name="github/hentaiOS-oberdfr"
+          fetch="https://github.com/HOS-oberdfr"
+          revision="refs/heads/oneui-AP3A" />
+
   <remote name="gitlab/hentaiOS"
           fetch="https://gitlab.hentaios.com/hentaiOS"
           revision="refs/heads/Vallhound" />
@@ -82,8 +86,8 @@
   <remove-project name="platform/hardware/qcom/sm7250/gps" />
 
   <!-- hentaiOSのスタート -->
-  <project path="bionic" name="platform_bionic" groups="pdk" remote="github/hentaiOS" />
-  <project path="build/make" name="platform_build" groups="pdk" remote="github/hentaiOS" >
+  <project path="bionic" name="platform_bionic" groups="pdk" remote="github/hentaiOS-oberdfr" />
+  <project path="build/make" name="platform_build" groups="pdk" remote="github/hentaiOS-oberdfr" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -92,25 +96,25 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="github/hentaiOS" >
+  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="github/hentaiOS-oberdfr" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="github/hentaiOS" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="github/hentaiOS-oberdfr" />
   <project path="external/json-c" name="platform_external_json-c" groups="pdk" remote="github/hentaiOS" />
-  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="gerrit/hentaiOS" />
-  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="github/hentaiOS" />
+  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="github/hentaiOS-oberdfr" />
+  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="github/hentaiOS-oberdfr" />
   <project path="hardware/qcom/sm7250/display" name="platform_hardware_qcom_sm7250_display" groups="pdk" remote="github/hentaiOS" />
   <project path="hardware/qcom/sm7250/media" name="platform_hardware_qcom_sm7250_media" groups="pdk" remote="github/hentaiOS" />
   <project path="hardware/qcom/sm7250/gps" name="platform_hardware_qcom_sm7250_gps" groups="pdk" remote="github/hentaiOS" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7250/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7250/Android.bp" />
   </project>
-  <project path="system/core" name="platform_system_core" groups="pdk" remote="github/hentaiOS" />
+  <project path="system/core" name="platform_system_core" groups="pdk" remote="github/hentaiOS-oberdfr" />
   <project path="packages/apps/helluvaUpdater" name="platform_packages_apps_helluvaUpdater" groups="pdk-fs" remote="github/hentaiOS" />
   <project path="vendor/codeaurora/telephony" name="platform_vendor_codeaurora_telephony" groups="vendor" remote="github/hentaiOS" />
   <project path="vendor/gms" name="platform_vendor_gms" groups="vendor" remote="gitlab/hentaiOS" clone-depth="1" />
-  <project path="vendor/hentai" name="platform_vendor_hentai" groups="vendor" remote="github/hentaiOS" />
+  <project path="vendor/hentai" name="vendor_hentai" groups="vendor" remote="github/hentaiOS-oberdfr" />
   <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="platform_vendor_qcom_opensource_data-ipa-cfg-mgr" groups="vendor" remote="github/hentaiOS" />
   <project path="vendor/qcom/opensource/dataservices" name="platform_vendor_qcom_opensource_dataservices" groups="vendor" remote="github/hentaiOS" />
   <project path="vendor/qcom/opensource/interfaces" name="platform_vendor_qcom_opensource_interfaces" groups="vendor" remote="github/hentaiOS" />
